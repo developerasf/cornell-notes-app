@@ -68,3 +68,17 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+---
+
+## Save to Google Drive (integration notes) ✅
+
+The app includes a placeholder "Save to Google Drive" control in the editor. To enable real Drive saves you'll need to:
+
+1. Create OAuth 2.0 client credentials in Google Cloud Console (choose Web application) and add authorized origins/callbacks for your app.
+2. Implement an OAuth flow (client-side or server-side). For production use a server-side token exchange and refresh handling is recommended.
+3. Use the Google Drive REST API to upload a file (create a `text/plain` file with the note contents). See https://developers.google.com/drive/api/v3/about-files
+4. Store user tokens safely on the server and call Drive API from backend or use the client library with proper OAuth consent.
+
+If you'd like, I can add a server-side example (Express + simple token storage + an endpoint to upload notes) and wire the UI to it.
+

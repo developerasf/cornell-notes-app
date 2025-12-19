@@ -1,0 +1,166 @@
+.note-list-container {
+  padding: 24px 36px;
+  background: linear-gradient(180deg,#070707,#0b0b0f);
+  min-height: 100%;
+  color: #e6e6e6;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+/* ensure text inherits theme color */
+.note-list-container,
+.note-list-container * {
+  color: inherit;
+}
+/* Light mode overrides */
+.App.light .note-list-container {
+  background: linear-gradient(180deg,#ffffff,#f7f7f7);
+  color: #111;
+}
+
+.App.light .note-row {
+  background: linear-gradient(180deg,#fff,#fafafa);
+  border: 1px solid rgba(0,0,0,0.06);
+  box-shadow: 0 2px 6px rgba(3,3,6,0.04);
+}
+
+.App.light .icon-btn {
+  background: rgba(0,0,0,0.03);
+  color: #111;
+  border-color: rgba(0,0,0,0.06);
+}
+.note-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+  color: inherit;
+  gap: 12px;
+  flex-wrap: nowrap;
+}
+
+.note-list-header h2 {
+  margin: 0;
+  color: inherit;
+  font-size: 20px;
+  font-weight: 700;
+}
+
+/* Light mode text color fixes for rows */
+.App.light .note-row {
+  color: #111;
+}
+
+.App.light .note-title {
+  color: #111;
+}
+.btn.create {
+  background: linear-gradient(90deg,#7c4dff,#4dabf7);
+  color: white;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.6);
+  white-space: nowrap;
+}
+
+.notes-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
+}
+
+.note-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 14px;
+  border-radius: 8px;
+  background: linear-gradient(180deg,#0b0b0d,#0f1012);
+  border: 1px solid rgba(255,255,255,0.03);
+  color: #eaeaea;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.4);
+}
+
+.note-row-content {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1 1 auto;
+  min-width: 0;
+  cursor: pointer;
+}
+
+.note-title {
+  font-weight: 700;
+  color: inherit;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 15px;
+}
+
+.note-actions {
+  display: flex;
+  gap: 8px;
+  margin-left: 12px;
+  flex: 0 0 auto;
+}
+
+.icon-btn {
+  border: 1px solid rgba(255,255,255,0.04);
+  background: rgba(255,255,255,0.02);
+  color: inherit;
+  padding: 6px 8px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: transform .12s ease, background .12s ease;
+}
+.icon-btn:hover {
+  background: rgba(255,255,255,0.05);
+  transform: translateY(-2px);
+}
+
+.icon-btn.danger {
+  background: rgba(255,50,80,0.06);
+  color: #ffbaba;
+  border-color: rgba(255,50,80,0.12);
+}
+
+.icon-btn.download-btn {
+  background: rgba(74,144,226,0.06);
+  color: #7fb3ff;
+  border-color: rgba(74,144,226,0.12);
+}
+
+/* Light mode override for download button */
+.App.light .icon-btn.download-btn {
+  background: rgba(74,144,226,0.06);
+  color: #0b66c2;
+  border-color: rgba(11,102,194,0.12);
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 520px) {
+  .note-list-header {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  .notes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .note-card {
+    padding-right: 16px;
+  }
+
+  .note-card-actions {
+    position: static;
+    margin-top: 8px;
+    justify-content: flex-end;
+  }
+}
